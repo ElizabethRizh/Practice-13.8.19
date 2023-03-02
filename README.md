@@ -22,10 +22,12 @@
 # Выводим итоговую стоимость без скидки/со скидкой
 
 tickets = int(input('Введите количество приобретаемых билетов на мероприятие: '))
+
 numbers_ages = []
 
 for i in range(0, tickets):
     input_value = int(input(f'Введите возраст участника №{i + 1}:\n'))
+    
     numbers_ages.append(input_value)
 
     def prise(age):
@@ -35,10 +37,11 @@ for i in range(0, tickets):
             return 990
         else:
             return 1390
-
-    full_prise = sum(map(prise, numbers_ages))
+            
+full_prise = sum(map(prise, numbers_ages))
 
 discount_prise = int(full_prise * 0.9)
+
 if tickets > 3:
     print('Стоимость всех билетов со скидкой: ', discount_prise, "руб.")
 else:
